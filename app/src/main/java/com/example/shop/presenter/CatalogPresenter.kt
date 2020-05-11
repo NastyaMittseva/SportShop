@@ -1,6 +1,7 @@
 package com.example.shop.presenter
 
 import com.example.shop.domain.MainApi
+import com.example.shop.domain.model.Category
 import kotlinx.coroutines.launch
 import moxy.InjectViewState
 import java.net.ConnectException
@@ -17,8 +18,8 @@ class CatalogPresenter @Inject constructor(
         super.onFirstViewAttach()
         launch {
             val remoteCategories = mainApi.allCategories("default")
-            val categoriesNames = remoteCategories.map { remoteCategory -> remoteCategory.name }
-            viewState.setCategoryNames(categoriesNames)
+            val categories = remoteCategories.map { remoteCategory -> Category(remoteCategory.id, remoteCategory.name) }
+            viewState.setCategory(categories)
         }
     }
 
@@ -30,5 +31,9 @@ class CatalogPresenter @Inject constructor(
         if (e is UnknownHostException){
             viewState.showError("Ошибка соединения с сервером")
         }
+    }
+
+    fun showProductsInCategory(category: Category) {
+        viewState.showProductsInCategory(category)
     }
 }
