@@ -5,6 +5,7 @@ import com.example.shop.di.modules.MainApiModule
 import com.example.shop.di.modules.PreferencesModule
 import com.example.shop.ui.CatalogActivity
 import com.example.shop.ui.CategoryActivity
+import com.example.shop.ui.ProductActivity
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
@@ -27,4 +28,5 @@ interface AppComponent {
 
     fun inject(activity: CatalogActivity)
     fun inject(activity: CategoryActivity)
+    fun inject(activity: ProductActivity)
 }

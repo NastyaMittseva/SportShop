@@ -12,7 +12,9 @@ import kotlinx.android.synthetic.main.item_product.*
 import kotlin.math.roundToInt
 
 
-class CategoryAdapter(): RecyclerView.Adapter<CategoryAdapter.ViewHolder>() {
+class CategoryAdapter(
+    private val onProductClick: (category: Product) -> Unit
+): RecyclerView.Adapter<CategoryAdapter.ViewHolder>() {
 
     private var products: List<Product> = listOf()
 
@@ -39,6 +41,10 @@ class CategoryAdapter(): RecyclerView.Adapter<CategoryAdapter.ViewHolder>() {
             priceIv.setPaintFlags(priceIv.getPaintFlags() or Paint.STRIKE_THRU_TEXT_FLAG)
             priceIv.text = product.price.roundToInt().toString() + " P"
             newPriceIv.text = product.calcDiscountPrice().roundToInt().toString() + " P"
+
+            containerView.setOnClickListener {
+                onProductClick(product)
+            }
         }
     }
 }

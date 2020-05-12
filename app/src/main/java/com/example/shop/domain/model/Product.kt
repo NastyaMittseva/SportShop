@@ -14,4 +14,5 @@ class Product(
     val categoryId: String
 ): Parcelable {
     fun calcDiscountPrice(): Double = price * (1 - discountPercent / 100.0)
+    fun calcSavingMoney(): Double = price - calcDiscountPrice()
 }

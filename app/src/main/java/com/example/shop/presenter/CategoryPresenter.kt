@@ -22,4 +22,8 @@ class CategoryPresenter @Inject constructor(
             viewState.setProducts(remoteProducts)
         }
     }
+
+    fun showProductInfo(product: Product){
+        viewState.showProductInfo(product)
+    }
 }

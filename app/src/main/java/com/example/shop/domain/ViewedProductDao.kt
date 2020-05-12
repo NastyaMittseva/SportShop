@@ -1,6 +1,6 @@
 package com.example.shop.domain
 
 interface ViewedProductDao {
-    fun addProduct(productID: Long)
-    fun getAllProducts():List<Long>
+    fun addProduct(productID: String)
+    fun getAllProducts():List<String>
 }

@@ -8,24 +8,24 @@ class ViewedProductDaoImpl(
     private val sharedPreferences: SharedPreferences
 ): ViewedProductDao {
 
-    private var savedProductIds:List<Long>
+    private var savedProductIds:List<String>
         get() = sharedPreferences.getString(PRODUCT_TAG,null)?.split(",")
-            ?.mapNotNull { it.toLongOrNull() } ?: emptyList()
+            ?.mapNotNull { it } ?: emptyList()
 
         set(value) = sharedPreferences.edit {
             putString(PRODUCT_TAG, value.joinToString(","))
         }
 
-    override fun addProduct(productID: Long) {
-        val productIds: List<Long> = savedProductIds
-        val newProductIds = mutableListOf<Long>().apply {
+    override fun addProduct(productID: String) {
+        val productIds: List<String> = savedProductIds
+        val newProductIds = mutableListOf<String>().apply {
             add(productID)
             addAll(productIds.filter { it != productID })
         }
         savedProductIds = newProductIds
     }
 
-    override fun getAllProducts(): List<Long> {
+    override fun getAllProducts(): List<String> {
         return savedProductIds
     }
 

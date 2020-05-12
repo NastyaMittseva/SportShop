@@ -8,4 +8,7 @@ import moxy.viewstate.strategy.StateStrategyType
 interface CategoryView: MvpView {
     @StateStrategyType(AddToEndSingleStrategy::class)
     fun setProducts(list: List<Product>)
+
+    @StateStrategyType(AddToEndSingleStrategy::class)
+    fun showProductInfo(product: Product)
 }

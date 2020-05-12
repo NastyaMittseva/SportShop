@@ -10,6 +10,7 @@ import com.example.shop.domain.model.Category
 import com.example.shop.domain.model.Product
 import com.example.shop.presenter.CategoryPresenter
 import com.example.shop.presenter.CategoryView
+import com.example.shop.ui.ProductActivity.Companion.PRODUCT_TAG
 import kotlinx.android.synthetic.main.catalog_layout.*
 import kotlinx.android.synthetic.main.category_layout.*
 import kotlinx.android.synthetic.main.navbar_layout.*
@@ -21,7 +22,7 @@ class CategoryActivity: BaseActivity(), CategoryView {
     @Inject
     lateinit var categoryPresenter: CategoryPresenter
     private val presenter by moxyPresenter { categoryPresenter }
-    private val categoryAdapter = CategoryAdapter()
+    private val categoryAdapter = CategoryAdapter{ product -> presenter.showProductInfo(product)}
 
     override fun onCreate(savedInstanceState: Bundle?) {
         App.appComponent.inject(this)
@@ -36,16 +37,21 @@ class CategoryActivity: BaseActivity(), CategoryView {
         presenter.onProductShow(category.id)
 
         headerBackBtn.setOnClickListener{
-            startActivity(Intent(this, CatalogActivity::class.java))
+            finish()
         }
-    }
-
-    companion object {
-        const val CATEGORY_TAG = "CATEGORY_TAG"
     }
 
     override fun setProducts(list: List<Product>) {
         categoryAdapter.setData(list)
     }
 
+    override fun showProductInfo(product: Product) {
+        startActivity(Intent(this, ProductActivity::class.java).apply {
+            putExtra(PRODUCT_TAG, product)
+        })
+    }
+
+    companion object {
+        const val CATEGORY_TAG = "CATEGORY_TAG"
+    }
 }
