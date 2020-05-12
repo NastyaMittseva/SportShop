@@ -72,26 +72,27 @@
             android:id="@+id/productSavingTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
             android:text="Экономия"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/tertiary_text_dark"
             android:textSize="16sp"
-            app:layout_constraintEnd_toStartOf="@+id/productSaving"
-            app:layout_constraintTop_toBottomOf="@+id/productImage" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/productPrice" />
 
         <TextView
             android:id="@+id/productSaving"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:textColor="@android:color/black"
+            android:shadowColor="#FFFFFF"
+            android:textColor="@android:color/tertiary_text_dark"
             android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/productImage"
+            app:layout_constraintStart_toEndOf="@+id/productSavingTitle"
+            app:layout_constraintTop_toBottomOf="@+id/productPrice"
             tools:text="Разница" />
 
         <TextView
@@ -100,24 +101,21 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:text="Описание"
             android:textColor="@android:color/black"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/productPrice" />
+            app:layout_constraintTop_toBottomOf="@+id/productSavingTitle" />
 
         <TextView
             android:id="@+id/productDescription"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginBottom="8dp"
-            android:gravity="fill_horizontal"
             android:inputType="textMultiLine"
             android:textColor="@android:color/black"
             android:textSize="15sp"
@@ -126,6 +124,20 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/productDescriptionTitle"
             tools:text="Описание" />
+
+        <Button
+            android:id="@+id/productBasketButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@color/colorPrimary"
+            android:text="В корзину"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/productImage" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

@@ -4,6 +4,7 @@ import android.content.Intent
 import android.graphics.Paint
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import com.example.shop.App
 import com.example.shop.R
 import com.example.shop.domain.model.Product
@@ -39,6 +40,15 @@ class ProductActivity: BaseActivity(), ProductView {
 
         headerBackBtn.setOnClickListener{
             finish()
+        }
+
+        productBasketButton.setOnClickListener{
+            presenter.addProductToCart(product)
+            Toast.makeText(this, "Товар добавлен в корзину", Toast.LENGTH_LONG).show()
+        }
+
+        cartBtn.setOnClickListener{
+            startActivity(Intent(this, CartActivity::class.java))
         }
     }
 

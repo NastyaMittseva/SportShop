@@ -32,6 +32,10 @@ class CatalogActivity : BaseActivity(), CatalogView {
         categoryRv.adapter = catalogAdapter
         headerText.text = "Каталог"
         headerBackBtn.visibility = View.GONE
+
+        cartBtn.setOnClickListener{
+            startActivity(Intent(this, CartActivity::class.java))
+        }
     }
 
     override fun setCategory(categories: List<Category>) {

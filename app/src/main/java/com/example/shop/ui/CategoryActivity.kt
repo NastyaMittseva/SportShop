@@ -39,6 +39,10 @@ class CategoryActivity: BaseActivity(), CategoryView {
         headerBackBtn.setOnClickListener{
             finish()
         }
+
+        cartBtn.setOnClickListener{
+            startActivity(Intent(this, CartActivity::class.java))
+        }
     }
 
     override fun setProducts(list: List<Product>) {

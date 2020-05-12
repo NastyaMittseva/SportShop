@@ -20,6 +20,7 @@
         </activity>
         <activity android:name=".ui.CategoryActivity" />
         <activity android:name=".ui.ProductActivity" />
+        <activity android:name=".ui.CartActivity" />
     </application>
 
 </manifest>
