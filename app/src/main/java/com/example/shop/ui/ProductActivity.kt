@@ -36,7 +36,6 @@ class ProductActivity: BaseActivity(), ProductView {
         productSaving.text = product.calcSavingMoney().roundToInt().toString()
         productDescription.text = product.description
         Picasso.get().load(product.imageUrl).into(productImage)
-        presenter.onProductShow(product)
 
         headerBackBtn.setOnClickListener{
             finish()

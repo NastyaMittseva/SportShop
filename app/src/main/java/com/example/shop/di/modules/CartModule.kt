@@ -10,5 +10,5 @@ class CartModule {
 
     @Provides
     @Singleton
-    fun provideCart(): Cart = Cart()
+    fun provideCart():Cart = Cart()
 }

@@ -8,6 +8,7 @@ import com.example.shop.R
 import com.example.shop.domain.model.Cart
 import com.example.shop.domain.model.Product
 import kotlinx.android.extensions.LayoutContainer
+import kotlinx.android.synthetic.main.cart_layout.*
 import kotlinx.android.synthetic.main.item_cart.*
 import kotlin.math.roundToInt
 

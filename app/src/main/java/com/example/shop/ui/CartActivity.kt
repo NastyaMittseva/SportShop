@@ -44,7 +44,6 @@ class CartActivity: BaseActivity(), CartView {
     }
 
     override fun setItems(cart: Cart) {
-        Log.d("cart ", cart.productList.toString())
         cartAdapter.setData(cart)
     }
 
