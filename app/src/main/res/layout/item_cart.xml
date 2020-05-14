@@ -17,15 +17,27 @@
         tools:text="Продукт" />
 
     <TextView
-        android:id="@+id/cartProductPrice"
+        android:id="@+id/cartProductPriceWithDiscount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:textColor="@android:color/black"
+        android:layout_marginBottom="8dp"
+        android:textColor="@color/red"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/cartDeleteProduct"
-        app:layout_constraintTop_toTopOf="parent"
         tools:text="Цена" />
+
+    <TextView
+        android:id="@+id/cartInitialProductPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="4dp"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toTopOf="@+id/cartProductPriceWithDiscount"
+        app:layout_constraintEnd_toStartOf="@+id/cartDeleteProduct"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:text="Начальная цена" />
 
     <ImageView
         android:id="@+id/cartDeleteProduct"

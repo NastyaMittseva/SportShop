@@ -18,9 +18,7 @@ class CartPresenter @Inject constructor(
 
     fun setItems(){
         val productIds = viewedProductDao.getAllProducts()
-        Log.d("productIds", productIds.toString())
         launch {
-            Log.d("productIds ", productIds.toString())
             val remoteProducts = mainApi.allProducts("default")
                 .filter { it.id in productIds }
                 .map { it -> Product(it.id, it.name, it.price, it.discountPercent, it.description,
@@ -40,5 +38,7 @@ class CartPresenter @Inject constructor(
     fun showProductDetails(product: Product) {
         viewState.showProductDetails(product)
     }
+
+    fun checkCartOnEmpty(): Boolean = cart.getCountProducts() == 0
 
 }

@@ -1,5 +1,6 @@
 package com.example.shop.ui
 
+import android.graphics.Paint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -37,7 +38,9 @@ class CartAdapter(
         LayoutContainer {
         fun bind(product: Product) {
             cartProductName.text = product.name
-            cartProductPrice.text = product.calcDiscountPrice().roundToInt().toString()
+            cartInitialProductPrice.setPaintFlags(cartInitialProductPrice.getPaintFlags() or Paint.STRIKE_THRU_TEXT_FLAG)
+            cartInitialProductPrice.text = product.price.roundToInt().toString() + " P"
+            cartProductPriceWithDiscount.text = product.calcDiscountPrice().roundToInt().toString() + " P"
 
             cartDeleteProduct.setOnClickListener{
                 onDeleteClick(product)

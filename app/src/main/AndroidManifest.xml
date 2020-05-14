@@ -21,6 +21,7 @@
         <activity android:name=".ui.CategoryActivity" />
         <activity android:name=".ui.ProductActivity" />
         <activity android:name=".ui.CartActivity" />
+        <activity android:name=".ui.CheckoutActivity" />
     </application>
 
 </manifest>

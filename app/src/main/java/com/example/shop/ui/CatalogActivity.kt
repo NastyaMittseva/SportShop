@@ -33,7 +33,7 @@ class CatalogActivity : BaseActivity(), CatalogView {
         headerText.text = "Каталог"
         headerBackBtn.visibility = View.GONE
 
-        cartBtn.setOnClickListener{
+        headerCartBtn.setOnClickListener{
             startActivity(Intent(this, CartActivity::class.java))
         }
     }

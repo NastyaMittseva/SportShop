@@ -46,7 +46,7 @@ class ProductActivity: BaseActivity(), ProductView {
             Toast.makeText(this, "Товар добавлен в корзину", Toast.LENGTH_LONG).show()
         }
 
-        cartBtn.setOnClickListener{
+        headerCartBtn.setOnClickListener{
             startActivity(Intent(this, CartActivity::class.java))
         }
     }

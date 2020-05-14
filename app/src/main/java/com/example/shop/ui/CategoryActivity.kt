@@ -40,7 +40,7 @@ class CategoryActivity: BaseActivity(), CategoryView {
             finish()
         }
 
-        cartBtn.setOnClickListener{
+        headerCartBtn.setOnClickListener{
             startActivity(Intent(this, CartActivity::class.java))
         }
     }

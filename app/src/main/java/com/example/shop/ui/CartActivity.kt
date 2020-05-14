@@ -3,6 +3,8 @@ package com.example.shop.ui
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.shop.App
 import com.example.shop.R
@@ -36,11 +38,21 @@ class CartActivity: BaseActivity(), CartView {
         cartRv.layoutManager = LinearLayoutManager(this)
         cartRv.adapter = cartAdapter
         cartPresenter.setItems()
+        headerText.text = "Корзина"
+        headerCartBtn.visibility = View.GONE
 
         headerBackBtn.setOnClickListener{
             finish()
         }
 
+        cartCheckout.setOnClickListener{
+            if (cartPresenter.checkCartOnEmpty()) {
+                Toast.makeText(this, "Добавьте товары в корзину!", Toast.LENGTH_LONG).show()
+            }
+            else{
+                startActivity(Intent(this, CheckoutActivity::class.java))
+            }
+        }
     }
 
     override fun setItems(cart: Cart) {
