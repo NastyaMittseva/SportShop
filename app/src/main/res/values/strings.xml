@@ -21,4 +21,19 @@
     <string name="cart_productPriceWithDiscount">Цена</string>
     <string name="cart_initialProductPrice">Начальная цена</string>
     <string name="cart_delete_product">delete product</string>
+    <string name="product_basket_button">В корзину</string>
+    <string name="product_description">Описание</string>
+    <string name="product_description_title">Описание</string>
+    <string name="product_saving">Разница</string>
+    <string name="product_saving_title">Экономия</string>
+    <string name="new_product_price">Новая цена</string>
+    <string name="product_price">Цена</string>
+    <string name="product_title">Название</string>
+    <string name="header_text">Оформление заказа</string>
+    <string name="header_Text">Header Text</string>
+    <string name="product">Продукт</string>
+    <string name="price">Цена</string>
+    <string name="new_price">Новая цена</string>
+    <string name="category">Категория</string>
+    <string name="text_empty_cart">У вас пока нет товаров в корзине!</string>
 </resources>

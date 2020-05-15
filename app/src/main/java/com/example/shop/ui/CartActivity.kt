@@ -40,7 +40,12 @@ class CartActivity: BaseActivity(), CartView {
         cartPresenter.setItems()
         headerText.text = "Корзина"
         headerCartBtn.visibility = View.GONE
-
+        if (cartPresenter.checkCartOnEmpty()) {
+            cartRv.visibility = View.GONE
+        }
+        else{
+            textEmptyCart.visibility = View.GONE
+        }
         headerBackBtn.setOnClickListener{
             finish()
         }

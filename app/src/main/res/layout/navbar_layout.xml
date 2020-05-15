@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#ECEFF1"
+    android:background="@color/background_color"
     android:elevation="8dp">
 
     <ImageButton
@@ -23,7 +23,7 @@
         android:id="@+id/headerText"
         android:layout_width="0dp"
         android:layout_height="56dp"
-        android:background="#FFFFFF"
+        android:background="@color/white"
         android:gravity="start|center_vertical"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
@@ -34,13 +34,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/headerBackBtn"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Header Text" />
+        tools:text="@string/header_Text" />
 
     <ImageButton
         android:id="@+id/headerCartBtn"
         android:layout_width="56dp"
         android:layout_height="56dp"
-        android:background="#FFFFFF"
+        android:background="@color/white"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

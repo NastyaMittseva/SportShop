@@ -40,7 +40,7 @@
             android:textSize="20sp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/navbar"
-            tools:text="Название" />
+            tools:text="@string/product_title" />
 
         <TextView
             android:id="@+id/productPrice"
@@ -53,7 +53,7 @@
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/productImage"
-            tools:text="Цена" />
+            tools:text="@string/product_price" />
 
         <TextView
             android:id="@+id/newProductPrice"
@@ -66,7 +66,7 @@
             android:textSize="18sp"
             app:layout_constraintStart_toEndOf="@+id/productPrice"
             app:layout_constraintTop_toBottomOf="@+id/productImage"
-            tools:text="Новая цена" />
+            tools:text="@string/new_product_price" />
 
         <TextView
             android:id="@+id/productSavingTitle"
@@ -74,8 +74,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
-            android:text="Экономия"
+            android:layout_marginTop="0dp"
+            android:text="@string/product_saving_title"
             android:textColor="@android:color/tertiary_text_dark"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -87,13 +87,13 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="0dp"
             android:shadowColor="#FFFFFF"
             android:textColor="@android:color/tertiary_text_dark"
             android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@+id/productSavingTitle"
             app:layout_constraintTop_toBottomOf="@+id/productPrice"
-            tools:text="Разница" />
+            tools:text="@string/product_saving" />
 
         <TextView
             android:id="@+id/productDescriptionTitle"
@@ -102,7 +102,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="8dp"
-            android:text="Описание"
+            android:text="@string/product_description_title"
             android:textColor="@android:color/black"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -123,7 +123,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/productDescriptionTitle"
-            tools:text="Описание" />
+            tools:text="@string/product_description" />
 
         <Button
             android:id="@+id/productBasketButton"
@@ -133,7 +133,7 @@
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:background="@color/colorPrimary"
-            android:text="В корзину"
+            android:text="@string/product_basket_button"
             android:textColor="@android:color/white"
             android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"

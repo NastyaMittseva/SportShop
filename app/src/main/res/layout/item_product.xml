@@ -10,14 +10,14 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="0.5dp"
-        android:background="#FFFFFF"
+        android:background="@color/white"
         android:padding="20dp"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Продукт" />
+        tools:text="@string/product" />
 
     <TextView
         android:id="@+id/priceIv"
@@ -30,7 +30,7 @@
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Цена" />
+        tools:text="@string/price" />
 
     <TextView
         android:id="@+id/newPriceIv"
@@ -45,7 +45,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/priceIv"
-        tools:text="Новая цена" />
+        tools:text="@string/new_price" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

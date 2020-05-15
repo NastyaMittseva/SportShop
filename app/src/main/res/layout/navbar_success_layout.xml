@@ -15,7 +15,7 @@
         android:gravity="start|center_vertical"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
-        android:text="Оформление заказа"
+        android:text="@string/header_text"
         android:textColor="@color/black"
         android:textSize="18sp"
         android:textStyle="bold"

@@ -44,10 +44,8 @@ class CheckoutPresenter @Inject constructor(
         order.initialSumOrder = cart.initialSum
         order.discount = cart.savingSum
         order.totalSumOrder = cart.totalSum
-        Log.d("myorder ", order.toString())
         launch {
             var number = api.createOrder(order)
-            Log.d("myorder ", number.toString())
             clearCartUseCase.invoke()
             order = Order(products = cart.productList)
             viewState.navigateToSuccess(number)
