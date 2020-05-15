@@ -5,12 +5,12 @@ import com.example.shop.domain.model.Cart
 import com.example.shop.domain.model.Product
 import javax.inject.Inject
 
-class AddProductToCartUseCase @Inject constructor(
+class ClearCartUseCase @Inject constructor(
     private val cart: Cart,
     private val cartDao: CartDao
 ) {
-    operator fun invoke(product: Product){
-        cart.addProduct(product)
-        cartDao.addProduct(product.id)
+    operator fun invoke(){
+        cart.clear()
+        cartDao.clearCart()
     }
 }

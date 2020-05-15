@@ -6,9 +6,9 @@ import moxy.MvpPresenter
 import javax.inject.Inject
 
 class ProductPresenter @Inject constructor(
-    private val useCase: AddProductToCartUseCase
+    private val addProductToCartUseCase: AddProductToCartUseCase
 ): MvpPresenter<ProductView>()  {
     fun addProductToCart(product: Product){
-        useCase.invoke(product)
+        addProductToCartUseCase.invoke(product)
     }
 }

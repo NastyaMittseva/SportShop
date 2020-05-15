@@ -17,7 +17,7 @@ class CatalogPresenter @Inject constructor(
     override fun onFirstViewAttach() {
         super.onFirstViewAttach()
         launch {
-            val remoteCategories = mainApi.allCategories("default")
+            val remoteCategories = mainApi.allCategories()
             val categories = remoteCategories.map { remoteCategory -> Category(remoteCategory.id, remoteCategory.name) }
             viewState.setCategory(categories)
         }

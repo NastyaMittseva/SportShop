@@ -1,15 +1,12 @@
 package com.example.shop.data
 
 import android.content.SharedPreferences
-import android.util.Log
 import androidx.core.content.edit
-import com.example.shop.di.modules.PreferencesModule
-import  com.example.shop.domain.ViewedProductDao
-import android.content.Context
+import  com.example.shop.domain.CartDao
 
-class ViewedProductDaoImpl(
+class CartDaoImpl(
     private val sharedPreferences: SharedPreferences
-): ViewedProductDao {
+): CartDao {
 
     private var savedProductIds:MutableList<String>
         get() = sharedPreferences.getString(PRODUCT_TAG,null)?.split(",")
@@ -37,6 +34,10 @@ class ViewedProductDaoImpl(
         val productIds: MutableList<String> =  savedProductIds
         productIds.remove(productID)
         savedProductIds = productIds
+    }
+
+    override fun clearCart() {
+        savedProductIds = mutableListOf<String>()
     }
 
     companion object{

@@ -17,6 +17,10 @@ class Cart() {
         productList = products.toMutableList()
     }
 
+    fun clear(){
+        productList.clear()
+    }
+
     fun getCountProducts() = productList.count()
     val totalSum get() = productList.map {product -> product.calcDiscountPrice()}.sum().roundToInt()
     val initialSum get() = productList.map {product -> product.price}.sum().roundToInt()

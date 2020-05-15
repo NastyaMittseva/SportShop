@@ -34,7 +34,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="8dp"
-                android:text="Получатель"
+                android:text="@string/personal_header"
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold"
@@ -52,7 +52,7 @@
                 android:layout_marginRight="24dp"
                 android:autofillHints=""
                 android:ems="10"
-                android:hint="Имя"
+                android:hint="@string/person_name"
                 android:inputType="textPersonName"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -69,7 +69,7 @@
                 android:layout_marginRight="24dp"
                 android:autofillHints=""
                 android:ems="12"
-                android:hint="+7(___)___-__-__"
+                android:hint="@string/person_phone"
                 android:inputType="phone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -86,8 +86,8 @@
                 android:layout_marginRight="24dp"
                 android:autofillHints=""
                 android:ems="10"
-                android:hint="Email"
-                android:inputType="textPersonName"
+                android:hint="@string/person_email"
+                android:inputType="textPersonName|textEmailAddress"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/personPhone" />
@@ -100,7 +100,7 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginLeft="24dp"
                 android:layout_marginTop="24dp"
-                android:text="Способ оплаты"
+                android:text="@string/payment_method"
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold"
@@ -119,28 +119,30 @@
                 app:layout_constraintTop_toBottomOf="@+id/paymentMethodHeader">
 
                 <RadioButton
-                    android:id="@+id/payment_cash"
+                    android:id="@+id/paymentCash"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Наличными"
+                    android:checked="false"
+                    android:text="@string/payment_cash"
                     android:textSize="18sp" />
 
                 <RadioButton
-                    android:id="@+id/payment_card"
+                    android:id="@+id/paymentCard"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Банковской картой"
+                    android:checked="true"
+                    android:text="@string/payment_card"
                     android:textSize="18sp" />
             </RadioGroup>
 
             <TextView
-                android:id="@+id/orderHeader"
+                android:id="@+id/sumHeader"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginLeft="24dp"
                 android:layout_marginTop="24dp"
-                android:text="Сумма заказа"
+                android:text="@string/sum_header"
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold"
@@ -154,11 +156,11 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginLeft="24dp"
                 android:layout_marginTop="16dp"
-                android:text="Сумма"
+                android:text="@string/full_price_header"
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/orderHeader" />
+                app:layout_constraintTop_toBottomOf="@+id/sumHeader" />
 
             <TextView
                 android:id="@+id/discountHeader"
@@ -167,7 +169,7 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginLeft="24dp"
                 android:layout_marginTop="16dp"
-                android:text="Скидка"
+                android:text="@string/discount_header"
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -180,7 +182,7 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginLeft="24dp"
                 android:layout_marginTop="16dp"
-                android:text="Итого"
+                android:text="@string/total_header"
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -196,8 +198,8 @@
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/orderHeader"
-                tools:text="Сумма" />
+                app:layout_constraintTop_toBottomOf="@+id/sumHeader"
+                tools:text="@string/initial_sum" />
 
             <TextView
                 android:id="@+id/savingMoney"
@@ -210,7 +212,7 @@
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/initialSum"
-                tools:text="Скидка" />
+                tools:text="@string/saving_money" />
 
             <TextView
                 android:id="@+id/totalSum"
@@ -223,7 +225,7 @@
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/savingMoney"
-                tools:text="Итого" />
+                tools:text="@string/total_sum" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
@@ -237,7 +239,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:background="@color/colorPrimary"
-        android:text="Оформить заказ"
+        android:text="@string/checkout_orderBtn"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

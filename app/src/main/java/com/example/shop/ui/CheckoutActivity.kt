@@ -6,10 +6,15 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import android.widget.EditText
+import android.widget.RadioButton
+import android.widget.Toast
+import androidx.core.view.get
 import com.example.shop.App
 import com.example.shop.R
+import com.example.shop.domain.model.Order
 import com.example.shop.presenter.CheckoutPresenter
 import com.example.shop.presenter.CheckoutView
+import com.example.shop.ui.SuccessCheckoutActivity.Companion.NUMBER_ORDER_TAG
 import kotlinx.android.synthetic.main.checkout_layout.*
 import kotlinx.android.synthetic.main.navbar_layout.*
 import javax.inject.Inject
@@ -29,16 +34,20 @@ class CheckoutActivity() : BaseActivity(),
         setListeners()
 
         headerText.text = "Оформление заказа"
-        initialSum.text = presenter.getInitialPrice().toString() + " P"
-        savingMoney.text = presenter.getSavingMoney().toString() + " P"
-        totalSum.text = presenter.getTotalPrice().toString() + " P"
+        initialSum.text = presenter.getInitialPrice()
+        savingMoney.text = presenter.getSavingMoney()
+        totalSum.text = presenter.getTotalPrice()
 
-//        checkoutOrderBtn.setOnClickListener(){
-//            isAuth = true
-//            setResult(REQUEST_AUTH, Intent().apply{
-//                putExtra(IS_USER_AUTH, isAuth)
-//            })
-//        }
+        checkoutOrderBtn.setOnClickListener(){
+            if (presenter.checkFormOnEmpty()) {
+                Toast.makeText(this, "Заполните все поля формы!", Toast.LENGTH_LONG).show()
+            }
+            else{
+                val paymentType: RadioButton = findViewById(paymentMethod.checkedRadioButtonId)
+                presenter.setPaymentType(paymentType.text.toString())
+                presenter.setSumOrder()
+            }
+        }
 
         headerBackBtn.setOnClickListener(){
             finish()
@@ -91,5 +100,11 @@ class CheckoutActivity() : BaseActivity(),
 
     override fun showErrorForPersonEmail(visible: Boolean) {
         personEmail.showError(visible)
+    }
+
+    override fun navigateToSuccess(orderNumber: Long) {
+        startActivity(Intent(this, SuccessCheckoutActivity::class.java).apply {
+            putExtra(NUMBER_ORDER_TAG, orderNumber)
+        })
     }
 }

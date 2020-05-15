@@ -2,6 +2,7 @@ package com.example.shop.presenter
 
 import moxy.MvpView
 import moxy.viewstate.strategy.AddToEndSingleStrategy
+import moxy.viewstate.strategy.SkipStrategy
 import moxy.viewstate.strategy.StateStrategyType
 
 @StateStrategyType(AddToEndSingleStrategy::class)
@@ -16,4 +17,6 @@ interface CheckoutView : MvpView {
     @StateStrategyType(AddToEndSingleStrategy::class)
     fun showErrorForPersonEmail(visible: Boolean)
 
+    @StateStrategyType(SkipStrategy::class)
+    fun navigateToSuccess(orderNumber: Long)
 }

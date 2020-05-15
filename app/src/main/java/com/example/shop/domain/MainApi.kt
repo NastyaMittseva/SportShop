@@ -1,6 +1,9 @@
 package com.example.shop.domain
 
+import com.example.shop.domain.model.Order
+import retrofit2.http.Body
 import retrofit2.http.GET
+import retrofit2.http.POST
 import retrofit2.http.Path
 
 data class RemoteProduct(
@@ -19,9 +22,12 @@ data class RemoteCategory(
 )
 
 interface MainApi {
-    @GET("products/all/{author}")
-    suspend fun allProducts(@Path("author") author: String):List<RemoteProduct>
+    @GET("products")
+    suspend fun allProducts():List<RemoteProduct>
 
-    @GET("categories/all/{author}")
-    suspend fun allCategories(@Path("author") author: String):List<RemoteCategory>
+    @GET("categories")
+    suspend fun allCategories():List<RemoteCategory>
+
+    @POST("order")
+    suspend fun createOrder(@Body request: Order): Long
 }

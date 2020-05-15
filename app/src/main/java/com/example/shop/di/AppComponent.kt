@@ -31,4 +31,5 @@ interface AppComponent {
     fun inject(activity: ProductActivity)
     fun inject(activity: CartActivity)
     fun inject(activity: CheckoutActivity)
+    fun inject(activity: SuccessCheckoutActivity)
 }

@@ -14,7 +14,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Продукт" />
+        tools:text="@string/cart_productName" />
 
     <TextView
         android:id="@+id/cartProductPriceWithDiscount"
@@ -24,7 +24,7 @@
         android:textColor="@color/red"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/cartDeleteProduct"
-        tools:text="Цена" />
+        tools:text="@string/cart_productPriceWithDiscount" />
 
     <TextView
         android:id="@+id/cartInitialProductPrice"
@@ -37,7 +37,7 @@
         app:layout_constraintEnd_toStartOf="@+id/cartDeleteProduct"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        tools:text="Начальная цена" />
+        tools:text="@string/cart_initialProductPrice" />
 
     <ImageView
         android:id="@+id/cartDeleteProduct"
@@ -49,6 +49,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:ignore="VectorDrawableCompat" />
+        tools:ignore="VectorDrawableCompat"
+        android:contentDescription="@string/cart_delete_product"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

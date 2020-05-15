@@ -1,25 +1,24 @@
 package com.example.shop.presenter
 
-import android.util.Log
 import com.example.shop.domain.MainApi
-import com.example.shop.domain.ViewedProductDao
+import com.example.shop.domain.CartDao
+import com.example.shop.domain.interactor.DeleteProductFromCartUseCase
 import com.example.shop.domain.model.Cart
-import com.example.shop.domain.model.Category
 import com.example.shop.domain.model.Product
 import kotlinx.coroutines.launch
-import moxy.MvpPresenter
 import javax.inject.Inject
 
 class CartPresenter @Inject constructor(
     private val cart: Cart,
     private val mainApi: MainApi,
-    private val viewedProductDao: ViewedProductDao
+    private val cartDao: CartDao,
+    private val deleteProductFromCartUseCase: DeleteProductFromCartUseCase
     ): BasePresenter<CartView>() {
 
     fun setItems(){
-        val productIds = viewedProductDao.getAllProducts()
         launch {
-            val remoteProducts = mainApi.allProducts("default")
+            val productIds = cartDao.getAllProducts()
+            val remoteProducts = mainApi.allProducts()
                 .filter { it.id in productIds }
                 .map { it -> Product(it.id, it.name, it.price, it.discountPercent, it.description,
                     it.imageUrl, it.category) }
@@ -30,8 +29,7 @@ class CartPresenter @Inject constructor(
 
     fun removeItem(product: Product){
         val position = cart.productList.indexOf(product)
-        cart.deleteProduct(product)
-        viewedProductDao.deleteProduct(product.id)
+        deleteProductFromCartUseCase.invoke(product)
         viewState.removeItem(position)
     }
 

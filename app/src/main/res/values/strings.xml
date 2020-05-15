@@ -1,4 +1,24 @@
 <resources>
-    <string name="app_name">Shop</string>
+    <string name="app_name">SportShop</string>
     <string name="catalog_header">Каталог</string>
+    <string name="cart_checkout">Оформить заказ</string>
+    <string name="personal_header">Получатель</string>
+    <string name="person_name">Имя</string>
+    <string name="person_phone">+7(___)___-__-__</string>
+    <string name="person_email">Email</string>
+    <string name="payment_method">Способ оплаты</string>
+    <string name="payment_cash">Наличными</string>
+    <string name="payment_card">Банковской картой</string>
+    <string name="sum_header">Сумма заказа</string>
+    <string name="full_price_header">Сумма</string>
+    <string name="discount_header">Скидка</string>
+    <string name="total_header">Итого</string>
+    <string name="initial_sum">Сумма</string>
+    <string name="saving_money">Скидка</string>
+    <string name="total_sum">Итого</string>
+    <string name="checkout_orderBtn">Оформить заказ</string>
+    <string name="cart_productName">Продукт</string>
+    <string name="cart_productPriceWithDiscount">Цена</string>
+    <string name="cart_initialProductPrice">Начальная цена</string>
+    <string name="cart_delete_product">delete product</string>
 </resources>

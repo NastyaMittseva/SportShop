@@ -1,7 +1,8 @@
 package com.example.shop.domain
 
-interface ViewedProductDao {
+interface CartDao {
     fun addProduct(productID: String)
     fun getAllProducts():List<String>
     fun deleteProduct(productID: String)
+    fun clearCart()
 }
