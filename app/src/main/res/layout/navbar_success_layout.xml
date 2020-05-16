@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#ECEFF1"
+    android:background="@color/background_color"
     android:elevation="8dp">
 
     <TextView
         android:id="@+id/headerText"
         android:layout_width="0dp"
         android:layout_height="56dp"
-        android:background="#FFFFFF"
+        android:background="@color/navbar_color"
         android:gravity="start|center_vertical"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
@@ -28,7 +28,7 @@
         android:id="@+id/headerCatalogBtn"
         android:layout_width="56dp"
         android:layout_height="56dp"
-        android:background="#FFFFFF"
+        android:background="@color/navbar_color"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
