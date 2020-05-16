@@ -23,6 +23,7 @@ class CartPresenter @Inject constructor(
                 .map { it -> Product(it.id, it.name, it.price, it.discountPercent, it.description,
                     it.imageUrl, it.category) }
             cart.updateProducts(remoteProducts)
+            viewState.updateBasketState(checkCartOnEmpty())
             viewState.setItems(cart)
         }
     }
@@ -37,6 +38,6 @@ class CartPresenter @Inject constructor(
         viewState.showProductDetails(product)
     }
 
-    fun checkCartOnEmpty(): Boolean = cart.getCountProducts() == 0
+    fun checkCartOnEmpty(): Boolean = cart.productList.isEmpty()
 
 }

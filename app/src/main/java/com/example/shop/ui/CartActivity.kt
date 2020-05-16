@@ -34,18 +34,12 @@ class CartActivity: BaseActivity(), CartView {
         App.appComponent.inject(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.cart_layout)
-
         cartRv.layoutManager = LinearLayoutManager(this)
         cartRv.adapter = cartAdapter
         cartPresenter.setItems()
         headerText.text = "Корзина"
         headerCartBtn.visibility = View.GONE
-        if (cartPresenter.checkCartOnEmpty()) {
-            cartRv.visibility = View.GONE
-        }
-        else{
-            textEmptyCart.visibility = View.GONE
-        }
+
         headerBackBtn.setOnClickListener{
             finish()
         }
@@ -72,5 +66,10 @@ class CartActivity: BaseActivity(), CartView {
         startActivity(Intent(this, ProductActivity::class.java).apply {
             putExtra(PRODUCT_TAG, product)
         })
+    }
+
+    override fun updateBasketState(visible: Boolean) {
+        textEmptyCart.visibility = if (!visible) View.GONE else View.VISIBLE
+        cartRv.visibility = if (!visible) View.VISIBLE else View.GONE
     }
 }

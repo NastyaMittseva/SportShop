@@ -16,4 +16,8 @@ interface CartView : MvpView {
 
     @StateStrategyType(AddToEndSingleStrategy::class)
     fun showProductDetails(product: Product)
+
+    @StateStrategyType(AddToEndSingleStrategy::class)
+    fun updateBasketState(active: Boolean)
+
 }
